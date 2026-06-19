@@ -1,147 +1,208 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ali Hussam | Social Media</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Ali Hussam • LEGENDARY</title>
 
-  <style>
-    body{
-      margin:0;
-      font-family:Arial, sans-serif;
-      color:white;
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
 
-      background:
-        radial-gradient(circle at 20% 10%, rgba(255,0,0,0.25), transparent 40%),
-        radial-gradient(circle at 80% 30%, rgba(120,0,0,0.35), transparent 50%),
-        radial-gradient(circle at 50% 90%, rgba(255,0,0,0.18), transparent 60%),
-        linear-gradient(180deg, #000000, #1a0000);
+body{
+  background:black;
+  color:white;
+  font-family:Arial;
+  overflow:hidden;
+}
 
-      animation: pulseBg 6s infinite alternate;
-      text-align:center;
-    }
+/* 🌌 GLITCH INTRO SCREEN */
+#intro{
+  position:fixed;
+  width:100%;
+  height:100%;
+  background:black;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  flex-direction:column;
+  z-index:999;
+  animation:fadeOut 3s ease forwards;
+  animation-delay:2s;
+}
 
-    @keyframes pulseBg {
-      0% { filter: brightness(1); }
-      100% { filter: brightness(1.15); }
-    }
+#intro h1{
+  font-size:30px;
+  color:red;
+  text-shadow:0 0 20px red;
+  animation:glitch 0.3s infinite;
+}
 
-    header{
-      padding:30px 10px;
-    }
+@keyframes glitch{
+  0%{transform:translate(0)}
+  20%{transform:translate(-2px,2px)}
+  40%{transform:translate(2px,-2px)}
+  60%{transform:translate(-1px,1px)}
+  80%{transform:translate(1px,-1px)}
+  100%{transform:translate(0)}
+}
 
-    .avatar{
-      width:95px;
-      height:95px;
-      margin:auto;
-      border-radius:50%;
-      overflow:hidden;
-      border:2px solid red;
-      box-shadow:0 0 15px red;
-    }
+@keyframes fadeOut{
+  to{opacity:0;visibility:hidden}
+}
 
-    .avatar img{
-      width:100%;
-      height:100%;
-      object-fit:cover;
-    }
+/* 🌌 BACKGROUND */
+body::before{
+  content:"";
+  position:fixed;
+  width:200%;
+  height:200%;
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,0,0,0.3), transparent 40%),
+    radial-gradient(circle at 80% 70%, rgba(255,0,255,0.2), transparent 50%),
+    radial-gradient(circle at 50% 50%, rgba(0,255,255,0.1), transparent 60%);
+  animation:move 8s infinite alternate;
+}
 
-    h1{
-      margin:10px 0 5px;
-      text-shadow:0 0 10px red;
-    }
+@keyframes move{
+  from{transform:translate(-10%,-10%)}
+  to{transform:translate(10%,10%)}
+}
 
-    p{
-      color:rgba(255,255,255,0.7);
-    }
+/* ✨ PARTICLES */
+.particle{
+  position:absolute;
+  width:3px;
+  height:3px;
+  background:white;
+  border-radius:50%;
+  animation:float 6s linear infinite;
+  opacity:0.6;
+}
 
-    .container{
-      max-width:800px;
-      margin:auto;
-      padding:20px;
-    }
+@keyframes float{
+  from{transform:translateY(100vh)}
+  to{transform:translateY(-10vh)}
+}
 
-    .card{
-      background:rgba(255,255,255,0.06);
-      margin:10px 0;
-      padding:15px;
-      border-radius:12px;
-      border:1px solid rgba(255,0,0,0.4);
-      box-shadow:0 0 10px rgba(255,0,0,0.2);
-    }
+/* MAIN */
+.container{
+  position:relative;
+  z-index:2;
+  text-align:center;
+  padding:40px;
+  animation:shake 2s ease;
+}
 
-    a{
-      color:red;
-      font-weight:bold;
-      text-decoration:none;
-    }
+@keyframes shake{
+  0%{transform:translate(0)}
+  20%{transform:translate(2px,2px)}
+  40%{transform:translate(-2px,-2px)}
+  60%{transform:translate(1px,1px)}
+  100%{transform:translate(0)}
+}
 
-    a:hover{
-      text-shadow:0 0 10px red;
-    }
+/* AVATAR */
+.avatar{
+  width:120px;
+  height:120px;
+  margin:auto;
+  border-radius:50%;
+  overflow:hidden;
+  border:2px solid cyan;
+  box-shadow:0 0 25px cyan;
+}
 
-    button{
-      padding:10px 15px;
-      border:none;
-      border-radius:10px;
-      margin:10px;
-      cursor:pointer;
-      background:#7c0000;
-      color:white;
-      border:1px solid red;
-      box-shadow:0 0 10px red;
-    }
+.avatar img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+}
 
-    button:hover{
-      transform:scale(1.05);
-      box-shadow:0 0 20px red;
-    }
+/* TITLE */
+h1{
+  margin-top:10px;
+  text-shadow:0 0 15px red;
+}
 
-    footer{
-      margin-top:30px;
-      color:rgba(255,255,255,0.5);
-      font-size:13px;
-    }
-  </style>
+p{color:gray}
+
+/* CARDS */
+.card{
+  background:rgba(255,255,255,0.05);
+  margin:10px auto;
+  padding:15px;
+  width:260px;
+  border-radius:12px;
+  border:1px solid rgba(255,0,0,0.3);
+  backdrop-filter:blur(10px);
+  transition:0.3s;
+}
+
+.card:hover{
+  transform:scale(1.08);
+  box-shadow:0 0 25px red;
+}
+
+a{
+  color:red;
+  font-weight:bold;
+  text-decoration:none;
+}
+
+/* BUTTON */
+button{
+  padding:10px 15px;
+  border:none;
+  border-radius:10px;
+  background:red;
+  color:white;
+  cursor:pointer;
+  box-shadow:0 0 15px red;
+  margin-top:10px;
+}
+
+button:hover{
+  transform:scale(1.1);
+}
+</style>
 </head>
 
 <body>
 
-<header>
-  <div class="avatar">
-    <img src="ttt.jpg" alt="profile">
-  </div>
-
-  <h1>Ali Hussam</h1>
-  <p>Social Media Profile</p>
-
-  <button onclick="toggleMusic()">🎵 Music</button>
-</header>
+<!-- ⚡ INTRO -->
+<div id="intro">
+  <h1>ENTERING SYSTEM...</h1>
+</div>
 
 <div class="container">
 
+  <div class="avatar">
+    <img src="ttt.jpg">
+  </div>
+
+  <h1>Ali Hussam</h1>
+  <p>LEGENDARY MODE</p>
+
+  <button onclick="toggleMusic()">🎵 Music</button>
+
   <div class="card">
     <h3>Instagram</h3>
-    <p>@lr2_f</p>
-    <a href="https://www.instagram.com/lr2_f" target="_blank">Visit</a>
+    <a href="https://instagram.com/lr2_f">Visit</a>
   </div>
 
   <div class="card">
     <h3>TikTok</h3>
-    <p>@lr2_f</p>
-    <a href="https://www.tiktok.com/@lr2_f" target="_blank">Visit</a>
+    <a href="https://tiktok.com/@lr2_f">Visit</a>
   </div>
 
   <div class="card">
     <h3>Telegram</h3>
-    <p>@lr2_f</p>
-    <a href="https://t.me/lr2_f" target="_blank">Open</a>
+    <a href="https://t.me/lr2_f">Open</a>
   </div>
 
   <div class="card">
     <h3>Email</h3>
-    <p>ddss10218@gmail.com</p>
-    <a href="mailto:ddss10218@gmail.com">Send Email</a>
+    <a href="mailto:ddss10218@gmail.com">Send</a>
   </div>
 
 </div>
@@ -149,23 +210,36 @@
 <!-- 🎵 MUSIC -->
 <audio id="music" src="ggg.mp3"></audio>
 
-<footer>
-  © 2026 Ali Hussam • All Rights Reserved
-</footer>
-
 <script>
-  const music = document.getElementById("music");
-  let playing = false;
 
-  function toggleMusic(){
-    if(!playing){
-      music.play();
-      playing = true;
-    }else{
-      music.pause();
-      playing = false;
-    }
+/* MUSIC */
+let music=document.getElementById("music");
+let playing=false;
+
+function toggleMusic(){
+  if(!playing){
+    music.play();
+    playing=true;
+  }else{
+    music.pause();
+    playing=false;
   }
+}
+
+/* PARTICLES */
+for(let i=0;i<60;i++){
+  let p=document.createElement("div");
+  p.className="particle";
+  p.style.left=Math.random()*100+"vw";
+  p.style.animationDuration=(Math.random()*5+3)+"s";
+  document.body.appendChild(p);
+}
+
+/* remove intro */
+setTimeout(()=>{
+  document.getElementById("intro").remove();
+},2500);
+
 </script>
 
 </body>
