@@ -1,0 +1,172 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ali Hussam | Social Media</title>
+
+  <style>
+    body{
+      margin:0;
+      font-family:Arial, sans-serif;
+      color:white;
+
+      background:
+        radial-gradient(circle at 20% 10%, rgba(255,0,0,0.25), transparent 40%),
+        radial-gradient(circle at 80% 30%, rgba(120,0,0,0.35), transparent 50%),
+        radial-gradient(circle at 50% 90%, rgba(255,0,0,0.18), transparent 60%),
+        linear-gradient(180deg, #000000, #1a0000);
+
+      animation: pulseBg 6s infinite alternate;
+      text-align:center;
+    }
+
+    @keyframes pulseBg {
+      0% { filter: brightness(1); }
+      100% { filter: brightness(1.15); }
+    }
+
+    header{
+      padding:30px 10px;
+    }
+
+    .avatar{
+      width:95px;
+      height:95px;
+      margin:auto;
+      border-radius:50%;
+      overflow:hidden;
+      border:2px solid red;
+      box-shadow:0 0 15px red;
+    }
+
+    .avatar img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+    }
+
+    h1{
+      margin:10px 0 5px;
+      text-shadow:0 0 10px red;
+    }
+
+    p{
+      color:rgba(255,255,255,0.7);
+    }
+
+    .container{
+      max-width:800px;
+      margin:auto;
+      padding:20px;
+    }
+
+    .card{
+      background:rgba(255,255,255,0.06);
+      margin:10px 0;
+      padding:15px;
+      border-radius:12px;
+      border:1px solid rgba(255,0,0,0.4);
+      box-shadow:0 0 10px rgba(255,0,0,0.2);
+    }
+
+    a{
+      color:red;
+      font-weight:bold;
+      text-decoration:none;
+    }
+
+    a:hover{
+      text-shadow:0 0 10px red;
+    }
+
+    button{
+      padding:10px 15px;
+      border:none;
+      border-radius:10px;
+      margin:10px;
+      cursor:pointer;
+      background:#7c0000;
+      color:white;
+      border:1px solid red;
+      box-shadow:0 0 10px red;
+    }
+
+    button:hover{
+      transform:scale(1.05);
+      box-shadow:0 0 20px red;
+    }
+
+    footer{
+      margin-top:30px;
+      color:rgba(255,255,255,0.5);
+      font-size:13px;
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="avatar">
+    <img src="ttt.jpg" alt="profile">
+  </div>
+
+  <h1>Ali Hussam</h1>
+  <p>Social Media Profile</p>
+
+  <button onclick="toggleMusic()">🎵 Music</button>
+</header>
+
+<div class="container">
+
+  <div class="card">
+    <h3>Instagram</h3>
+    <p>@lr2_f</p>
+    <a href="https://www.instagram.com/lr2_f" target="_blank">Visit</a>
+  </div>
+
+  <div class="card">
+    <h3>TikTok</h3>
+    <p>@lr2_f</p>
+    <a href="https://www.tiktok.com/@lr2_f" target="_blank">Visit</a>
+  </div>
+
+  <div class="card">
+    <h3>Telegram</h3>
+    <p>@lr2_f</p>
+    <a href="https://t.me/lr2_f" target="_blank">Open</a>
+  </div>
+
+  <div class="card">
+    <h3>Email</h3>
+    <p>ddss10218@gmail.com</p>
+    <a href="mailto:ddss10218@gmail.com">Send Email</a>
+  </div>
+
+</div>
+
+<!-- 🎵 MUSIC -->
+<audio id="music" src="ggg.mp3"></audio>
+
+<footer>
+  © 2026 Ali Hussam • All Rights Reserved
+</footer>
+
+<script>
+  const music = document.getElementById("music");
+  let playing = false;
+
+  function toggleMusic(){
+    if(!playing){
+      music.play();
+      playing = true;
+    }else{
+      music.pause();
+      playing = false;
+    }
+  }
+</script>
+
+</body>
+</html>
